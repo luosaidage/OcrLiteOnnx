@@ -26,7 +26,6 @@ settings = dict(
 def make_app():
     return tornado.web.Application([
         (r"/api/tr-run/", tr_run.TrRun),
-        (r"/", tr_index.Index),
         (r"/(.*)", StaticFileHandler,
          {"path": os.path.join(current_path, "dist/chineseocr_lite_fontend"), "default_filename": "index.html"}),
 
